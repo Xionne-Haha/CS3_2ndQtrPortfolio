@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Key Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        #message {
+            transition: opacity 0.2s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Alphabet Key Game</h1>
+
+        <div class="flex justify-around w-full max-w-sm mb-8 text-2xl font-medium">
+            <div id="score-container">
+                Score: <span id="score" class="font-bold text-cyan-400">0</span>
+            </div>
+            <div id="timer-container">
+                Time: <span id="timer" class="font-bold text-yellow-400">30</span>
+            </div>
+        </div>
+
+        <div id="letter-display" class="w-48 h-48 md:w-64 md:h-64 bg-gray-800 rounded-2xl shadow-xl flex items-center justify-center mb-8">
+            <span id="letter" class="text-7xl md:text-9xl font-bold text-cyan-400"></span>
+        </div>
+
+        <div id="message-container" class="h-12 mb-4">
+             <span id="message" class="text-3xl font-medium"></span>
+        </div>
+
+        <button id="start-button" class="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold py-3 px-8 rounded-lg text-xl transition-all duration-200 shadow-lg">
+            Start Game
+        </button>
+    </div>
+
+    <footer class="mt-8 pt-4 text-center text-gray-500 text-sm">
+        © 2025 Xionne Jacob. All rights reserved.
+    </footer>
+
+
+    <script>
+        const letterDisplay = document.getElementById('letter');
+        const scoreDisplay = document.getElementById('score');
+        const timerDisplay = document.getElementById('timer');
+        const messageDisplay = document.getElementById('message');
+        const startButton = document.getElementById('start-button');
+        const letterBox = document.getElementById('letter-display');
+
+        const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let currentLetter = '';
+        let score = 0;
+        let timer = 30;
+        let gameInterval = null;
+        let isGameRunning = false;
+
+        function getRandomLetter() {
+            const randomIndex = Math.floor(Math.random() * ALPHABET.length);
+            return ALPHABET[randomIndex];
+        }
+
+        function showMessage(text, isCorrect) {
+            messageDisplay.textContent = text;
+            messageDisplay.classList.remove('text-green-500', 'text-red-500');
+            
+            if (isCorrect) {
+                messageDisplay.classList.add('text-green-500');
+            } else {
+                messageDisplay.classList.add('text-red-500');
+            }
+            messageDisplay.style.opacity = 1;
+
+            setTimeout(() => {
+                if (isGameRunning) {
+                    messageDisplay.style.opacity = 0;
+                }
+            }, 800);
+        }
+
+        function updateScore(points) {
+            score += points;
+            scoreDisplay.textContent = score;
+        }
+
+        function nextLetter() {
+            currentLetter = getRandomLetter();
+            letterDisplay.textContent = currentLetter;
+        }
+
+        function endGame() {
+            isGameRunning = false;
+            clearInterval(gameInterval);
+            
+            letterDisplay.textContent = '🏁';
+            messageDisplay.style.opacity = 1;
+            showMessage(`Game Over! Final Score: ${score}`, true);
+            
+            startButton.textContent = 'Play Again?';
+            startButton.classList.remove('hidden');
+        }
+
+        function startGame() {
+            score = 0;
+            timer = 30;
+            isGameRunning = true;
+            
+            scoreDisplay.textContent = score;
+            timerDisplay.textContent = timer;
+            messageDisplay.textContent = '';
+            messageDisplay.style.opacity = 0;
+            startButton.classList.add('hidden');
+            
+            nextLetter();
+
+            gameInterval = setInterval(() => {
+                timer--;
+                timerDisplay.textContent = timer;
+
+                if (timer <= 0) {
+                    endGame();
+                }
+            }, 1000);
+        }
+
+        function handleKeyPress(e) {
+            if (!isGameRunning) {
+                return;
+            }
+
+            const keyPressed = e.key.toUpperCase();
+
+            if (ALPHABET.includes(keyPressed)) {
+                if (keyPressed === currentLetter) {
+                    showMessage("✅ Correct!", true);
+                    updateScore(1);
+                    nextLetter();
+                } else {
+                    showMessage("❌ Try again!", false);
+                    updateScore(-1);
+                }
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyPress);
+        startButton.addEventListener('click', startGame);
+
+        function init() {
+            letterDisplay.textContent = 'A';
+            messageDisplay.textContent = 'Press "Start Game" to play!';
+            messageDisplay.style.opacity = 1;
+        }
+
+        init();
+    </script>
+</body>
+</html>
