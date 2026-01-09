@@ -65,4 +65,5 @@ Possibly many happy memories :)
 
 ## Details
 
-## Definition of clone
+## Definition of done
+Clean website, you have to make an account in order to access the website, make the css cleaner and more presentable with a possibly nicer design or less likely, different color pallete. 
