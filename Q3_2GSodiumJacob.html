@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club/Organization Application</title>
+    <style>
+          /* Sunny background styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://cdn.wallpapersafari.com/57/73/Nz4sQl.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+       
+        form {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        fieldset {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+            background-color: #e6f7ff;
+        }
+
+        .error {
+            border: 2px solid red;
+            background-color: #ffe6e6;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+            color: white;
+        }
+
+        button[type="reset"] {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+    <script>
+        function confirmSubmit() {
+            if (confirm("Are you sure you want to submit the form?")) {
+                alert("Form Submitted: Thank you for answering");
+                return true; // Allow form submission
+            }
+            return false; // Prevent form submission
+        }
+
+        function confirmReset() {
+            return confirm("Are you sure you want to reset the form?");
+        }
+
+        function validateInput(event) {
+            if (!event.target.value) {
+                event.target.classList.add('error');
+            } else {
+                event.target.classList.remove('error');
+            }
+        }
+    </script>
+</head>
+<body>
+    <form method="post" action="submit" onsubmit="return confirmSubmit()" onreset="return confirmReset()">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label>
+                Student ID:
+                <input type="number" name="studentID" required onblur="validateInput(event)">
+            </label>
+            <label>
+                Full Name:
+                <input type="text" name="fullName" required onblur="validateInput(event)">
+            </label>
+            <label>
+                Birthday:
+                <input type="date" name="birthday" required onblur="validateInput(event)">
+            </label>
+            <label>
+                Email Address:
+                <input type="email" name="email" required onblur="validateInput(event)">
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Contact Information</legend>
+            <label>
+                Mobile Phone:
+                <input type="text" name="mobilePhone" required onblur="validateInput(event)">
+            </label>
+            <label>
+                Grade Level:
+                <select name="gradeLevel" required>
+                    <option value="">Select Grade Level</option>
+                    <option value="7">Grade 7</option>
+                    <option value="8">Grade 8</option>
+                    <option value="9">Grade 9</option>
+                    <option value="10">Grade 10</option>
+                    <option value="11">Grade 11</option>
+                    <option value="12">Grade 12</option>
+                </select>
+            </label>
+            <label>
+                Section:
+                <input type="text" name="Section" required onblur="validateInput(event)">
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Application Details</legend>
+            <label>
+                Intern / Extern:
+                <input type="radio" name="role" value="intern" required> Intern
+                <input type="radio" name="role" value="extern" required> Extern
+            </label>
+            <label>
+                Preferred Club (Club A):
+                <select name="preferredClubA" required>
+                    <option value="">Select Club A</option>
+                    <option value="aksis">Aksis (Social Action)</option>
+                    <option value="alianti">Alianti (Frisbee)</option>
+                    <option value="astrosoc">Astrosoc (Astronomy)</option>
+                    <option value="bakeClub">Bake Club (Bake)</option>
+                    <option value="bravura">Bravura (Symphonic Ensemble)</option>
+                    <option value="celluloid">Celluloid (Film)</option>
+                    <option value="computron">Computron (Computer Science)</option>
+                    <option value="intyale">Intyale (TTRPG)</option>
+                    <option value="invictus">Invictus (Debate)</option>
+                    <option value="kamalayan">Kamalayan (Filipino Theatre)</option>
+                    <option value="kislap">Kislap (Volleyball)</option>
+                    <option value="munwha">Munwha (Asian Culture Appreciation)</option>
+                    <option value="pisayXYZ">Pisay.XYZ (Maker)</option>
+                    <option value="sca">SCA (Catholic)</option>
+                    <option value="sigasig">Sigasig (Taekwondo)</option>
+                    <option value="volant">Volant (Badminton)</option>
+                </select>
+            </label>
+            <label>
+                Preferred Club (Club B):
+                <select name="preferredClubB" required>
+                    <option value="">Select Club B</option>
+                    <option value="acts">ACTS (Christian)</option>
+                    <option value="atom">ATOM (Chemistry)</option>
+                    <option value="care">CARE (Environment)</option>
+                    <option value="ellipsis">Ellipsis (Literature)</option>
+                    <option value="exposure">Exposure (Photography)</option>
+                    <option value="labuyo">Labuyo (Football)</option>
+                    <option value="loqui">Loqui (Foreign Language)</option>
+                    <option value="pallastro">Pallastro (Basketball)</option>
+                    <option value="polvere">Polvere (FPS Games)</option>
+                    <option value="pyhs">PYHS (Physics)</option>
+                    <option value="sapienara">Sapienara (Sudoku)</option>
+                    <option value="sarsPlus">SARS+ (Research)</option>
+                    <option value="sightlines">Sightlines (English Theatre)</option>
+                    <option value="tomorrow">Tomorrow (Data Science)</option>
+                    <option value="flux">Flux (Swimming)</option>
+                    <option value="animo">Animo (Chess Club)</option>
+                    <option value="yvs">YVS (Youth Venture Society)</option>
+                </select>
+            </label>
+            <label>
+                Why do you want to join:
+                <textarea name="reason" rows="4" required onblur="validateInput(event)"></textarea>
+            </label>
+        </fieldset>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
