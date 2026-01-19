@@ -1,18 +1,21 @@
 body {
-    background: #262842;
+    background: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/9bc27292880429.5e569ff84e4d0.gif') no-repeat center center fixed !important;
+    background-size: cover !important;
     color: #E3E4FA;
     font-family: 'Press Start 2P', monospace;
     margin: 0;
     padding: 0;
 }
 
+/* Header styles */
 header {
-    background: #293961;
+    /* Changed to 90% opacity */
+    background: rgba(41, 57, 97, 0.9); 
     color: #E3E4FA;
     text-align: center;
     padding: 2rem 1rem 1rem 1rem;
-    border-bottom: 4px solid #2C497F;
-    box-shadow: 0 4px 0 #262842;
+    border-bottom: 4px solid rgba(44, 73, 127, 0.8);
+    box-shadow: 0 4px 0 rgba(38, 40, 66, 0.5);
 }
 
 header h1 {
@@ -27,13 +30,15 @@ header p {
     color: #8897BD;
 }
 
+/* Navigation styles */
 nav {
-    background: #2C497F;
+    /* Changed to 80% opacity */
+    background: rgba(44, 73, 127, 0.8);
     display: flex;
     justify-content: center;
     gap: 2rem;
     padding: 1rem 0;
-    border-bottom: 2px solid #8897BD;
+    border-bottom: 2px solid rgba(136, 151, 189, 0.5);
 }
 
 nav a {
@@ -46,16 +51,18 @@ nav a {
 }
 
 nav a:hover {
-    background: #8897BD;
+    background: rgba(136, 151, 189, 0.8);
     color: #262842;
 }
 
+/* Main content styles */
 main {
     max-width: 900px;
     margin: 2rem auto;
-    background: #293961;
+    /* Changed to 85% opacity */
+    background: rgba(41, 57, 97, 0.85);
     border-radius: 8px;
-    box-shadow: 0 0 16px #262842;
+    box-shadow: 0 0 16px rgba(38, 40, 66, 0.6);
     padding: 2rem;
 }
 
@@ -67,10 +74,11 @@ section.genre h2 {
     color: #E3E4FA;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #2C497F;
+    border-bottom: 2px solid rgba(44, 73, 127, 0.7);
     padding-bottom: 0.5rem;
 }
 
+/* Game list styles */
 .game-list {
     display: flex;
     flex-wrap: wrap;
@@ -78,13 +86,14 @@ section.genre h2 {
 }
 
 .game-card {
-    background: #262842;
-    border: 2px solid #2C497F;
+    /* Changed to 70% opacity for a layered look */
+    background: rgba(38, 40, 66, 0.7);
+    border: 2px solid rgba(44, 73, 127, 0.8);
     border-radius: 8px;
     padding: 1rem;
     flex: 1 1 300px;
     min-width: 250px;
-    box-shadow: 0 2px 8px #293961;
+    box-shadow: 0 2px 8px rgba(41, 57, 97, 0.5);
 }
 
 .game-card h3 {
@@ -98,12 +107,13 @@ section.genre h2 {
     color: #E3E4FA;
 }
 
+/* Footer styles */
 footer {
     text-align: center;
     padding: 1rem;
-    background: #2C497F;
+    background: rgba(44, 73, 127, 0.9);
     color: #E3E4FA;
     font-size: 0.8rem;
-    border-top: 2px solid #8897BD;
+    border-top: 2px solid rgba(136, 151, 189, 0.5);
     margin-top: 2rem;
 }
