@@ -5,100 +5,95 @@
     <title>Gameboy Pedia - Genre Catalogue</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Essential layout to push footer down */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            /* Using the transparent background you liked */
+            background: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/9bc27292880429.5e569ff84e4d0.gif') no-repeat center center fixed !important;
+            background-size: cover !important;
+            color: #E3E4FA;
+            font-family: 'Press Start 2P', monospace;
+        }
+
+        header {
+            background: rgba(41, 57, 97, 0.9);
+            text-align: center;
+            padding: 2rem 1rem;
+            border-bottom: 4px solid rgba(44, 73, 127, 0.8);
+        }
+
+        main {
+            flex: 1; /* Pushes the footer to the bottom */
+            max-width: 900px;
+            width: 100%;
+            margin: 2rem auto;
+            background: rgba(41, 57, 97, 0.85); /* Transparent panel */
+            border-radius: 8px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #dice-image {
+            display: block;
+            width: 300px; 
+            height: 300px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #dice-image:hover {
+            transform: scale(1.1); /* Slight grow effect when hovering */
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(44, 73, 127, 0.9);
+            border-top: 2px solid rgba(136, 151, 189, 0.5);
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <h1>Gameboy Pedia</h1>
-        <p>
-            Pixel Perfect Information &mdash; Explore the World of Video Game Genres.
-        </p>
+        <p>Pixel Perfect Information &mdash; Explore the World of Video Game Genres.</p>
     </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="action.html">Action</a>
-        <a href="adventure.html">Adventure</a>
-        <a href="fps.html">FPS</a>
-        <a href="horror.html">Horror</a>
-        <a href="rpg.html">RPG</a>
-        <a href="simulation.html">Simulation</a>
-        <a href="reference.html">References</a>
-    </nav>
+
     <main>
-        <section class="genre" id="action">
-            <h2>Action</h2>
-            <p>
-                An action game is a video game genre that primarily focuses on physical strains and challenges. These types of games require players to utilize hand-eye coordination and fast reaction times to overcome these challenges. 
-            </p>
-            <p>
-                These games always feature fast-paced movement, action and navigating environments to scout if there are any hidden advantages in the map to use.
-            </p>
-            <p>
-                The core essence of the games involve a player-controlled character battling enemies, sometimes controlled by AI and sometimes PvP or Player vs Player matchups. Some action games may include elements from other existing genres lkne puzzles, however they are only second to the main action.
-            </p>
-        </section>
-        <section class="genre" id="adventure">
-            <h2>Adventure</h2>
-            <p>
-                Adventure games are also another video game genre that primarily focuses on storytelling, exploration and puzzle-solving rather than face-paced physical challenges or combat. Players usually assume the role of a protagonist in an interactive experiences taking place in immersive worlds.
-            </p>
-            <p>
-                These games always feature a rich story filled context that is taking place in a very immersive world, just like I mentioned before. Because of that, adventure games are often considered as one of the most relaxing game genres of all time, due to it having no pressure or stress just like other games possess.
-            </p>
-            <p>
-                The core gameplay involves uncovering a plot, interacting with non-player characters or NPC through dialogue trees, gathering and using inventories to store items that you would use later on.
-            </p>
-        </section>
-        <section class="genre" id="fps">
-            <h2>FPS</h2>
-            <p>
-                FPS Games are a video game genre that centers around weapon based combat as seen from the eyes of the player in first person, hence the name: First Person Shooter, this provides an immersive, realistic viewpoint of the game.
-            </p>
-            <p>
-                Unlike third person shooters where players can see the character from behknd or above, the FPS perspectives place the camera inside the the eyes of the character you're playing as, further boosting the sense of realism within this virtual world.
-            </p>
-            <p>
-                The primary purpose of the games typically involve firearms or other projectile weapons, requiring quick reflexes and strategy to come up with a plan to win the game. You can also either play with teammates or free for all. The games also require you to utilize your surroundings in order to win the game.
-            </p>
-        </section>
-        <section class="genre" id="horror">
-            <h2>Horror</h2>
-            <p>
-                Horror games are a genre of video gsmes that are modified to bring up feelings of fear and unease into its players, requiring a variety of interactions and decisions. Unlike more tame media like films, horror games require the player to interact with the game.  
-            </p>
-            <p>
-                In addition to that, video games enhance realism and immersion in the frightening landscape of the game. Horror games are one of the few games that rely solely on narrative themes and scare the player instead of just mechanics. 
-            </p>
-            <p>
-                The horror genre has two major subgenres, mainly survival horror and psychological horror. To give you the rundown, survival horror games are defined by limited resources, an almost defenseless protagonist and primary objective of beating or escaping the power antagonists while psychological horror uses unsettling atmospherd and disturbing elements that play with the player's mind, causing them to be disorientated.
-            </p>
-        </section>
-        <section class="genre" id="rpg">
-            <h2>RPG</h2>
-            <p>
-                A roleplaying game or RPG is a hame where plahers assume and play rhe romes of characters in a fictional universe, either through storytelling or decision making. The key component of RPG's are character progressions, inventory systems and a detailed story with both game and side quests.
-            </p>
-            <p>
-                The core concept of RPG's are playing and determining how your fate in the game will end, either good or bad is a posibility inside of it. The games are specially adapted so that every single decision of yours counts and could be unique to every other outcome that might happen to somebody else. 
-            </p>
-            <p>
-                The essence of RPG's have been adapted into multiple formats over the years, including single player playthroughs, massively multiplayer online role playing games, live action role playing and many more scenarios that could be conjured up in the countless fictional worlds inside of the archives.
-            </p>
-        </section>
-        <section class="genre" id="simulation">
-            <h2>Simulation</h2>
-            <p>
-                Simulation games strive to replicate real-world activities, systems, or environments, offering players a chance to experience scenarios ranging from piloting aircraft to managing cities. The genre emphasizes realism, accuracy, and attention to detail, allowing players to learn and experiment within virtual settings. Simulation games can be educational, entertaining, or both.
-            </p>
-            <p>
-                The genre encompasses a wide variety of experiences, including life simulation, vehicle simulation, and business management. Players are often given control over complex systems, making decisions that affect outcomes and progress. The open-ended nature of simulation games encourages creativity and problem-solving.
-            </p>
-            <p>
-                Simulation games have contributed to advancements in technology and training, serving as tools for education and professional development. Their versatility and depth make them appealing to a broad audience, from casual players to enthusiasts seeking authentic experiences. The genre continues to evolve, integrating new technologies and expanding the possibilities of virtual simulation.
-            </p>
-        </section>
+         <img 
+            id="dice-image" 
+            src="https://github.com/tay-lor-AI/WDProjStrontiumTancincoYu/blob/main/images/favicon.gif?raw=true" 
+            alt="Roll the Dice"
+        >
     </main>
+
     <footer>
-        &copy; 2025 Gameboy Pedia. Pixel Perfect Information for Gamers, Students, and Geeks.
+        <p>&copy; 2026 Gameboy Pedia. All rights reserved.</p>
     </footer>
+
+    <script>
+        const pages = [
+            "action.html",
+            "adventure.html",
+            "fps.html",
+            "horror.html",
+            "rpg.html",
+            "simulation.html",
+        ];
+
+        document.getElementById("dice-image").addEventListener("click", () => {
+            const randomIndex = Math.floor(Math.random() * pages.length);
+            window.location.href = pages[randomIndex];
+        });
+    </script>
 </body>
 </html>
