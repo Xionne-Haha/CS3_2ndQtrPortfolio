@@ -20,6 +20,8 @@
             border: 1px solid #ccc;
             border-radius: 10px;
             background-color: #f9f9f9;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         fieldset {
@@ -40,6 +42,7 @@
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box; 
         }
 
         input:focus, select:focus, textarea:focus {
@@ -70,12 +73,52 @@
             background-color: #dc3545;
             color: white;
         }
+        
+        button.view-btn {
+            background-color: #007BFF;
+            color: white;
+        }
     </style>
     <script>
+        function saveToLocalStorage() {
+            const form = document.forms[0];
+            
+            const studentData = {
+                studentID: form.studentID.value,
+                fullName: form.fullName.value,
+                birthday: form.birthday.value,
+                email: form.email.value,
+                mobilePhone: form.mobilePhone.value,
+                gradeLevel: form.gradeLevel.value,
+                section: form.Section.value,
+                role: form.role.value, 
+                preferredClubA: form.preferredClubA.value,
+                preferredClubB: form.preferredClubB.value,
+                reason: form.reason.value,
+                timestamp: new Date().toLocaleString()
+            };
+
+            let allSignups = localStorage.getItem('clubSignups');
+            
+            if (allSignups) {
+                allSignups = JSON.parse(allSignups);
+            } else {
+                allSignups = [];
+            }
+
+            allSignups.push(studentData);
+            localStorage.setItem('clubSignups', JSON.stringify(allSignups));
+        }
+
         function confirmSubmit() {
             if (confirm("Are you sure you want to submit the form?")) {
-                alert("Form Submitted: Thank you for answering");
-                return true; 
+                saveToLocalStorage();
+                
+                alert("Form Submitted: Thank you for answering. Data saved to LocalStorage.");
+                
+                window.location.reload();
+                
+                return false; 
             }
             return false; 
         }
@@ -91,10 +134,14 @@
                 event.target.classList.remove('error');
             }
         }
+
+        function goToView() {
+            window.location.href = "viewSignUps.html";
+        }
     </script>
 </head>
 <body>
-    <form method="post" action="submit" onsubmit="return confirmSubmit()" onreset="return confirmReset()">
+    <form onsubmit="return confirmSubmit()" onreset="return confirmReset()">
         <fieldset>
             <legend>Personal Information</legend>
             <label>
@@ -140,9 +187,9 @@
         <fieldset>
             <legend>Application Details</legend>
             <label>
-                Intern / Extern:
-                <input type="radio" name="role" value="intern" required> Intern
-                <input type="radio" name="role" value="extern" required> Extern
+                Intern / Extern: <br>
+                <input type="radio" name="role" value="intern" style="width:auto;" required> Intern
+                <input type="radio" name="role" value="extern" style="width:auto;" required> Extern
             </label>
             <label>
                 Preferred Club (Club A):
@@ -194,8 +241,10 @@
                 <textarea name="reason" rows="4" required onblur="validateInput(event)"></textarea>
             </label>
         </fieldset>
+        
         <button type="submit">Submit</button>
         <button type="reset">Reset</button>
+        <button type="button" class="view-btn" onclick="goToView()">View Signups</button>
     </form>
 </body>
 </html>
