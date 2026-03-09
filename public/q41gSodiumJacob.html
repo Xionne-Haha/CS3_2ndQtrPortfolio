@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://e1.pxfuel.com/desktop-wallpaper/48/539/desktop-wallpaper-19-independence-day-resurgence-backgrounds-5120x2880-for-your-mobile-tablet-independence-day-movie.jpg'); 
+            background-size: cover;      
+            background-position: center; 
+            background-attachment: fixed;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h2 { text-align: center; color: #333; margin-bottom: 20px; }
+
+        .form-group { margin-bottom: 15px; }
+
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: #444; }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .stars-container {
+            font-size: 24px;
+            cursor: pointer;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .star.active { color: #ffcc00; }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover { background-color: #0056b3; }
+
+        #movie-list { margin-top: 20px; }
+
+        .movie-card {
+            background: #fafafa;
+            border: 1px solid #eee;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .list-stars { color: #ffcc00; margin-left: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Add a Movie</h2>
+
+    <div class="form-group">
+        <label>Title:</label>
+        <input type="text" id="movieTitle" placeholder="Enter movie title">
+    </div>
+
+    <div class="form-group">
+        <label>Year:</label>
+        <input type="text" id="movieYear" placeholder="Enter year">
+    </div>
+
+    <div class="form-group">
+        <label>Genre:</label>
+        <select id="movieGenre">
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Horror">Horror</option>
+        </select>
+    </div>
+
+    <label>Rating:</label>
+    <div class="stars-container" id="starRating">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+    </div>
+
+    <button onclick="addMovie()">Add Movie</button>
+
+    <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+
+    <h2>Movie List</h2>
+    <div id="movie-list"></div>
+</div>
+
+<script>
+    let currentRating = 0;
+
+    const stars = document.querySelectorAll('.star');
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            currentRating = star.getAttribute('data-value');
+            updateStars(currentRating);
+        });
+    });
+
+    function updateStars(rating) {
+        stars.forEach(star => {
+            star.classList.toggle('active', star.getAttribute('data-value') <= rating);
+        });
+    }
+
+    window.onload = displayMovies;
+
+    function addMovie() {
+        const title = document.getElementById('movieTitle').value;
+        const year = document.getElementById('movieYear').value;
+        const genre = document.getElementById('movieGenre').value;
+
+        if (!title || !year || currentRating === 0) {
+            alert("Please fill in all fields and provide a rating!");
+            return;
+        }
+
+        const newMovie = {
+            title: title,
+            year: year,
+            genre: genre,
+            rating: currentRating.toString()
+        };
+
+        const movies = JSON.parse(localStorage.getItem('movies')) || [];
+
+        movies.push(newMovie);
+
+        localStorage.setItem('movies', JSON.stringify(movies));
+
+        document.getElementById('movieTitle').value = '';
+        document.getElementById('movieYear').value = '';
+        currentRating = 0;
+        updateStars(0);
+        displayMovies();
+    }
+
+    function displayMovies() {
+        const movieListDiv = document.getElementById('movie-list');
+        const movies = JSON.parse(localStorage.getItem('movies')) || [];
+
+        movieListDiv.innerHTML = '';
+
+        movies.forEach(movie => {
+            const starIcons = '★'.repeat(parseInt(movie.rating));
+
+            const movieCard = document.createElement('div');
+            movieCard.className = 'movie-card';
+            movieCard.innerHTML = `
+                <strong>${movie.title}</strong> (${movie.year}) - ${movie.genre}, Rating:
+                <span class="list-stars">${starIcons}</span>
+            `;
+            movieListDiv.appendChild(movieCard);
+        });
+    }
+</script>
+
+</body>
+</html>
