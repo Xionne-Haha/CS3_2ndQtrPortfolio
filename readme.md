@@ -1,3 +1,15 @@
+1. Gameboy Pedia
+
+2. This is the ultimate catalogue of games that is the best treat for enthusiasts to enjoy. Gameboy Pedia offers a multitude of game genres and some examples to make your gaming experience more enjoyable. Who knows, it might even expand your gaming library.
+
+3. This project is for nerds and enthusiasts that enjoy laying back and playing games to their heart's content. I myself am a gamer that enjoys playing all kinds of game genres, be it from laid-back fantasy RPGs and Adventure Games to high action FPS Games that force to me the edge of my seat.
+
+4. They will love this project because there are undoubtedly many people like me that enjoy gaming with different experiences and this website can help them expand their gaming library, as well as giving out tips for various game genres that exist and lastly, this website will contain specs that are suited to run specific game genres. This will also contain hardware choices that everybody can buy with their convenience without breaking the bank or leaving you with 100,000 pesos in debt TnT.                   
+
+5. This project features premier information and frequently tweaked updates that ensures our gamers get the latest information about games and hardware, especially now that hardware prices are drastically increasing. More and more triple A titles are also on the horizon and in turn, they demand more powerful hardware. Even though our job is to just relay game information, that won't stop us from helping people play games that they can dream of watching in Youtube.
+
+6. Submitted by Big Bad Barts and Xionnara in Partial fulfillment of the requirements of CS3 of DOST-PSHS-MC
+
 **Project Proposal**
 
 1. A working website Title. The title should be short, catchy and would encapsulate what the website is about.  This title will be used on the website browser tab. *Gameboy Pedia*
