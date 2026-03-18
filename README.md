@@ -8,8 +8,6 @@
 
 **Features**: This project features premier information and frequently tweaked updates that ensures our gamers get the latest information about games and hardware, especially now that hardware prices are drastically increasing. More and more triple A titles are also on the horizon and in turn, they demand more powerful hardware. Even though our job is to just relay game information, that won't stop us from helping people play games that they can dream of watching in Youtube.
 
-**License**: Submitted by Big Bad Barts and Xionnara in Partial fulfillment of the requirements of CS3 of DOST-PSHS-MC
-
 **Project Proposal**
 
 1. A working website Title. The title should be short, catchy and would encapsulate what the website is about.  This title will be used on the website browser tab. *Gameboy Pedia*
@@ -79,3 +77,5 @@ Possibly many happy memories :)
 
 ## Definition of done
 Clean website, you have to make an account in order to access the website, make the css cleaner and more presentable with a possibly nicer design or less likely, different color pallete. 
+
+**License**: Submitted by Big Bad Barts and Xionnara in Partial fulfillment of the requirements of CS3 of DOST-PSHS-MC
