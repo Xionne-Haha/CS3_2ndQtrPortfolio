@@ -95,6 +95,10 @@
                     <input type="email" id="email" name="email" placeholder="user@pedia.com" required>
                 </div>
 
+                <div class="input-box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="**********" required>
+
                 <div class="input-box" style="margin-top: 20px;">
                     <label for="nickname">Nickname</label>
                     <input type="text" id="nickname" name="nickname" placeholder="Player 1" required>
@@ -102,12 +106,35 @@
 
                 <button type="submit">START GAME</button>
             </form>
+
+            <script>
+                document.getElementById("loginForm").addEventListener("submit", function(event) {
+                    event.preventDefault();
+                
+                    const enteredNickname = document.getElementById("login-nickname").value;
+                    const enteredPassword = document.getElementById("login-password").value;
+                
+                    const storedNickname = localStorage.getItem("nickname");
+                    const storedPassword = localStorage.getItem("password");
+                
+                    if (enteredNickname === storedNickname && enteredPassword === storedPassword) {
+                        alert("Access granted! Welcome " + storedNickname);
+                        window.location.href = "randomizer.html";
+                    } else {
+                        alert("Incorrect nickname or password!");
+                    }
+                });
+            </script>
+
+        <p style="margin-top: 15px; text-align: center;">
+            Don’t have an account?
+            <a href="singups.html">Create one here</a>
+        </p>
         </div>
     </main>
 
     <footer>
         &copy; 2026 Gameboy Pedia. Pixel Perfect Information.
     </footer>
-
 </body>
 </html>
