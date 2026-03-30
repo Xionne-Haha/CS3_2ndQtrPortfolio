@@ -56,18 +56,23 @@
 - Add in css ```position: relative; top: 20px; left: 20px;``` to .sidebar.
 
 - Guided Question: What changed compared to the default static positioning? Try to give different values to top and left or you can change it to bottom, right.
+Answer: Unlike static (the default), relative allows you to move an element without affecting its neighbors. The Sidebar moved 20px down and 20px right, but the space it originally occupied remains eIf you change it to bottom: 20px, it will actually push the element up from where it was supposed to be.
+
+Experiment: If you change it to bottom: 20px, it will actually push the element up from where it was supposed to be.
 
 ### Step 2 (Fixed):
 
 - Add in css ```position: fixed; bottom: 0; width: 100%;``` to .footer.
 
 - Guided Question: What happens when you scroll the page? Why does the footer behave differently from position relative?
+Answer: The footer stays glued to the bottom of your screen (the viewport), no matter how far down you scroll. Relative is relative to itself in the document flow. Fixed is relative to the window. It’s effectively removed from the flow of the page.
 
 ### Step 3 (Absolute):
 
 - Add in css ```position: absolute; top: 66px; left: 200px;``` to .content.
 
 - Guided Question: What is the effect of position: absolute on an element? How is it different from fixed?
+Answer: Absolute completely removes the element from the document flow. While fixed sticks to the screen, absolute sticks to its nearest positioned ancestor (in this case, the <body>). If you scroll down, an absolute element will scroll up and away with the rest of the page.
 
 ### Step 4 : (Absolute)
 
@@ -87,6 +92,7 @@
 - Give .content a z-index: 1.
 
 - Guided Question: Why does the notice appear on top of the content? What happens if you swap the z‑index values?
+Answer: z-index determines what is "closer" to your eyes. Since the .notice has z-index: 2 and .content has z-index: 1, the notice wins the fight for the top spot. It will overlap and potentially hide the notice if you swap the z-index values.
 
 - Challenge: 
     * What changes that you have to do on the code that will position .notice box on the top right corner of the .content box? Please write the code on paper as well (both html and css on the part of .notice and .content).
@@ -95,10 +101,17 @@
 
 3. Please answer the following reflection questions (15 minutes)
 
-    a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)? 
+    a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)?
+Static was the default where elements followed the default order of the file.
+Relative is moved via top/bottom/left/right relative to its original spot.
+Absolute is placed relative to its nearest positioned ancestor.
+Fixed is placed relative to the browser window.
 
     b. How does absolute positioning depend on its parent element?
+Absolute positioning looks up the file to find the first parent that has a position value other than static. If it finds one, the cardinal coordinates are computed from the edges of that parent. If it doesn't find one, it keeps looking.
 
     c. How do you differentiate sticky from fixed (you can research on sticky)?
-
+Fixed is completely detached from the page. It doesn't care about its parent. It is always on top and never moves. Sticky acts like relative until you scroll to a specific point, then acts like fixed.
+   
     d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
+I would place a bright "Buy Tickets" button in the top-right corner using position: fixed; top: 20px; right: 20px;. This ensures that no matter how much someone reads about the event, the desired action is always visible.
