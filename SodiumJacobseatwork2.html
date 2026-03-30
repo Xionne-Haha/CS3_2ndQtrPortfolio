@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="author" content="<your names>" />
-  <meta name="revised" content="<date today>" />
+  <meta name="author" content="Xionne" />
+  <meta name="revised" content="March 30, 2026" />
   <style>
-    body { font-family: Arial, sans-serif; }
-    .header, .footer {
+    body {
+      font-family: Arial, sans-serif;
+      height: 2000px;
+      margin: 0;
+    }
+
+    .header {
       background: lightblue;
       padding: 10px;
     }
-    .footer {
-       opacity: 0.5;
-    }
+
     .sidebar {
       background: lightgreen;
       width: 150px;
       height: 200px;
+      position: relative;
+      top: 20px;
+      left: 20px;
     }
+
     .content {
       background: lightyellow;
       width: 300px;
       height: 200px;
-    }    
+      position: absolute;
+      top: 66px;
+      left: 200px;
+      additional-index: 1;
+    }
+
+    .notice {
+        position: absolute;
+        top: 60px;
+        left: 400px;
+        background: orange;
+        padding: 10px;
+        additional-index: 2;
+    }
+
+    .footer {
+      background: lightblue;
+      padding: 10px;
+      opacity: 0.5;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
   <div class="header">Header</div>
   <div class="sidebar">Sidebar</div>
   <div class="content">Main Content</div>
-  <div class="footer">Footer</div>
+  <div class="notice">Notice!</div> <div class="footer">Footer</div>
 </body>
 </html>
