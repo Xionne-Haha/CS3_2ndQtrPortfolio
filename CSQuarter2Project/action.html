@@ -30,6 +30,29 @@
                 Alternatively, the player gets to the end of the game by finishing a sequence of levels to complete a final goal, and see the credits. Some action games, such as early arcade games, are unbeatable and have an indefinite number of levels. The player's only goal is to get as far as they can, to maximize their score.
             </p>
         </section>
+
+        <h2 style="display: inline-block; margin-right: 10px;">Action Games Specs</h2>
+        <button id="specsBtn">View Minimum Specs</button>
+
+
+        <div id="specsBox" style="display:none; border:1px solid #ccc; padding:10px; margin-top:10px; background: #0f0f0f; color:#fff; max-width:300px;">
+           <strong>Minimum PC Specs (60 FPS):</strong>
+           <ul>
+             <li>CPU: Intel Core i5-12400F</li>
+             <li>GPU: NVIDIA RTX 3060</li>
+             <li>RAM: 16 GB DDR4</li>
+             <li>Storage: 512 GB NVMe SSD</li>
+             <li>OS: Windows 10 (64-bit)</li>
+           </ul>
+        </div>
+
+        <script>
+             document.getElementById("specsBtn").addEventListener("click", function() {
+             const box = document.getElementById("specsBox");
+             box.style.display = (box.style.display === "none") ? "block" : "none";
+            });
+        </script>
+        
         <section class="notable-examples">
             <h2>Notable Examples</h2>
             <div class="game-list">
