@@ -107,6 +107,15 @@ section.genre h2 {
     color: #E3E4FA;
 }
 
+.hidden-music {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none; /* Prevents users from accidentally clicking it */
+}
+
 /* Footer styles */
 footer {
     text-align: center;
