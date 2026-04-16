@@ -30,6 +30,29 @@
                 The genre is broadly categorized into two sub-genres like previously mentioned before: Psychological horror games like those in the "Silent Hill" series, focus on disturbing the perception of the player and aims to create an uneasy atmosphere for the whole game, to which it does successfully. Meanwhile, Survival Horror, like in the Granny series, focuses more on resource management, awareness and evasion in scenarios filled with threats lurking around the map.
             </p>
         </section>
+
+        <h2 style="display: inline-block; margin-right: 10px;">Horror Games Specs</h2>
+        <button id="specsBtn">View Minimum Specs</button>
+
+
+        <div id="specsBox" style="display:none; border:1px solid #ccc; padding:10px; margin-top:10px; background: #0f0f0f; color:#fff; max-width:300px;">
+           <strong>Minimum PC Specs (60 FPS):</strong>
+           <ul>
+             <li>CPU: Intel Core i5-11400</li>
+             <li>GPU: NVIDIA RTX 3050</li>
+             <li>RAM: 16 DDR4</li>
+             <li>Storage: 256 GB SSD</li>
+             <li>OS: Windows 10 (64-bit)</li>
+           </ul>
+        </div>
+
+        <script>
+             document.getElementById("specsBtn").addEventListener("click", function() {
+             const box = document.getElementById("specsBox");
+             box.style.display = (box.style.display === "none") ? "block" : "none";
+            });
+        </script>
+
         <section class="notable-examples">
             <h2>Notable Examples</h2>
             <div class="game-list">
