@@ -28,6 +28,29 @@
                 A defining feature of the genre is "player-guided navigation through a three-dimensional space." This is a defining characteristic that clearly distinguishes the genre from other types of shooting games that employ a first-person perspective, including light gun shooters, rail shooters, shooting gallery games, or older shooting electro-mechanical games. First person-shooter games are thus categorized as being distinct from light gun shooters, a similar genre with a first-person perspective which uses dedicated light gun peripherals, in contrast to the use of conventional input devices.
             </p>
         </section>
+
+        <h2 style="display: inline-block; margin-right: 10px;">FPS Games Specs</h2>
+        <button id="specsBtn">View Minimum Specs</button>
+
+
+        <div id="specsBox" style="display:none; border:1px solid #ccc; padding:10px; margin-top:10px; background: #0f0f0f; color:#fff; max-width:300px;">
+           <strong>Minimum PC Specs (60 FPS):</strong>
+           <ul>
+             <li>CPU: Intel Core i5-12600K</li>
+             <li>GPU: NVIDIA RTX 3070</li>
+             <li>RAM: 16 GB DDR4</li>
+             <li>Storage: 512 GB NVMe SSD</li>
+             <li>OS: Windows 10 (64-bit)</li>
+           </ul>
+        </div>
+
+        <script>
+             document.getElementById("specsBtn").addEventListener("click", function() {
+             const box = document.getElementById("specsBox");
+             box.style.display = (box.style.display === "none") ? "block" : "none";
+            });
+        </script>
+
         <section class="notable-examples">
             <h2>Notable Examples</h2>
             <div class="game-list">
@@ -53,3 +76,4 @@
     </footer>
 </body>
 </html>
+
