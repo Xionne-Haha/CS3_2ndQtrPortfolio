@@ -30,6 +30,29 @@
                 Arguably, the most important element of adventure games should encourage players to explore and look for secrets in the world around them. The world doesn’t have to be big, by any means, but it should naturally prompt players to look around instead of barreling down one path.
             </p>
         </section>
+
+        <h2 style="display: inline-block; margin-right: 10px;">Adventure Games Specs</h2>
+        <button id="specsBtn">View Minimum Specs</button>
+
+
+        <div id="specsBox" style="display:none; border:1px solid #ccc; padding:10px; margin-top:10px; background: #0f0f0f; color:#fff; max-width:300px;">
+           <strong>Minimum PC Specs (60 FPS):</strong>
+           <ul>
+             <li>CPU: AMD Ryzen 5 5600</li>
+             <li>GPU: AMD Radeon RX 6600 XT</li>
+             <li>RAM: 16 GB DDR4</li>
+             <li>Storage: 1 TB HDD + 256 GB SSD (SSD for main game and HDD for story files)</li>
+             <li>OS: Windows 10 (64-bit)</li>
+           </ul>
+        </div>
+
+        <script>
+             document.getElementById("specsBtn").addEventListener("click", function() {
+             const box = document.getElementById("specsBox");
+             box.style.display = (box.style.display === "none") ? "block" : "none";
+            });
+        </script>
+
         <section class="notable-examples">
             <h2>Notable Examples</h2>
             <div class="game-list">
