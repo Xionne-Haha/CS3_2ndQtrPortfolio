@@ -30,6 +30,29 @@
                 There are three types of simulation games: construction games, life simulation and sports. These three have vastly different tasks and goals to take care of but they all ultimately provide the liberty of allowing the player to do whatever he wants in the game, acting as something with just the click of a button. 
             </p>
         </section>
+
+        <h2 style="display: inline-block; margin-right: 10px;">FPS Games Specs</h2>
+        <button id="specsBtn">View Minimum Specs</button>
+
+
+        <div id="specsBox" style="display:none; border:1px solid #ccc; padding:10px; margin-top:10px; background: #0f0f0f; color:#fff; max-width:300px;">
+           <strong>Minimum PC Specs (60 FPS):</strong>
+           <ul>
+             <li>CPU: AMD Ryzen 7 5800X3D</li>
+             <li>GPU: NVIDIA GTX 1660 Super</li>
+             <li>RAM: 16 GB DDR4</li>
+             <li>Storage: 512 GB SSD</li>
+             <li>OS: Windows 10 (64-bit)</li>
+           </ul>
+        </div>
+
+        <script>
+             document.getElementById("specsBtn").addEventListener("click", function() {
+             const box = document.getElementById("specsBox");
+             box.style.display = (box.style.display === "none") ? "block" : "none";
+            });
+        </script>
+
         <section class="notable-examples">
             <h2>Notable Examples</h2>
             <div class="game-list">
